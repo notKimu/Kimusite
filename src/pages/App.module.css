@@ -1,0 +1,107 @@
+.fullSection {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 20rem black;
+
+    overflow: hidden;
+}
+
+
+/** FIRST SLIDE */
+.presentationCharacter {
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    right: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    z-index: 3;
+}
+
+.presentationCharacter img {
+    width: 50vw;
+}
+
+.presentationAbout {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 1rem;
+}
+
+.presentationAbout h1 {
+    color: azure;
+    font-family: 'Osaka';
+    font-size: 11rem;
+}
+
+
+/**SECOND SLIDE */
+.frontend {
+    padding: 1rem;
+    background-image: url('../files/img/background2.png');
+}
+
+.frontend h1 {
+    font-size: 3rem;
+}
+
+
+/**BELLS & WHISTLES */
+.parallax {
+    transition: 1s;
+    transition-timing-function: cubic-bezier(.22,.68,0,1.71);
+}
+
+.minecraftBg {
+    background-image: url('../files/img/background.png');
+    background-attachment: fixed;
+}
+
+
+/**RESPONSIVE */
+@media screen and (max-width: 800px) {
+    .presentationCharacter {
+        right: .5rem;
+    }
+
+    .presentationAbout {
+        left: .2rem;
+        padding: .2rem;
+    }
+
+    .presentationAbout h1 {
+        font-size: 9rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .presentationCharacter img {
+        margin-top: 20vh;
+    }
+
+    .presentationAbout h1 {
+        font-size: 7rem;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .presentationAbout h1 {
+        font-size: 5.5rem;
+    }
+  }
+  
