@@ -10,7 +10,7 @@ export default function Nav() {
     const handleScroll = () => {
       const currentPosition = window.scrollY;
       console.log(currentPosition);
-      if (currentPosition >= window.innerHeight) {
+      if (currentPosition >= window.innerHeight - 30) {
         setDisplayText("Frontend");
       } else {
         setDisplayText("");

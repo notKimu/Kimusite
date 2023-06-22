@@ -1,14 +1,14 @@
 @font-face {
-  font-family: 'Osaka';
-  src: url('./files/fonts/osaka-re.ttf');
+  font-family: "Osaka";
+  src: url("./files/fonts/osaka-re.ttf");
 }
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
 
 :root {
-  --main-font: 'Osaka';
-  --text-font: 'Kanit', sans-serif;
-  --pixel-font: 'Silkscreen', cursive;
+  --main-font: "Osaka";
+  --text-font: "Kanit", sans-serif;
+  --pixel-font: "Silkscreen", cursive;
 
   --accent-color: #d17cff;
   --dark-color: #0a0a0a;
@@ -23,7 +23,7 @@
   color: azure;
   font-family: var(--text-font);
   font-size: 1.2rem;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 body,
