@@ -1,0 +1,19 @@
+{
+  "frontend": [
+    {
+      "name": "MadVods",
+      "description": "A web to show the VODS of Rubius omg holy shit\n\nIt's fully made in React and stores the IDs of the videos in a JSON file (I love them) so they can be played in an embeded video or if they are a Google Drive file, send the user to that link.\n\nIt's more 'frontend' oriented, almost half the code it's CSS XD.\nI was looking for a urban style website and I think it really fits.",
+      "imageUrl": "https://cdn.discordapp.com/attachments/1112890871109664848/1121950829931413564/madkat_ascii.png"
+    },
+    {
+      "name": "Kimuweb",
+      "description": "The website you are in right now!!1!\n\nMy personal portfolio, I am trying to learn by doing crazy stuff here, it's not intended to look professional, I am not a professional, I dont like being professional, I am just dumb :P\n\nIt's build in react as always, I don't like big frameworks, and obviously almost all the code is CSS, that's the funny stuff right there.",
+      "imageUrl": "https://cdn.discordapp.com/attachments/1112890871109664848/1122327498689093733/kimuweb.png"
+    },
+    {
+      "name": "Kimuweb",
+      "description": "The website you are in right now!!1!\n\nMy personal portfolio, I am trying to learn by doing crazy stuff here, it's not intended to look professional, I am not a professional, I dont like being professional, I am just dumb :P\n\nIt's build in react as always, I don't like big frameworks, and obviously almost all the code is CSS, that's the funny stuff right there.",
+      "imageUrl": "https://cdn.discordapp.com/attachments/1112890871109664848/1122327498689093733/kimuweb.png"
+    }
+  ]
+}

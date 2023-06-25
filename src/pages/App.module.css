@@ -53,13 +53,62 @@
 
 /**SECOND SLIDE */
 .frontend {
-  padding: 1rem;
-  background-image: url("../files/img/background2.png");
+  padding: 2rem;
+  background-color: var(--dark-color);
 }
 
 .frontend h1 {
+  font-family: var(--frontend-font);
   font-size: 3rem;
 }
+
+.frontendViewer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  margin-top: 4rem;
+
+  display: flex;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.frontendContent {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  animation: enter-left .3s;
+}
+
+.frontendContent p {
+  line-height: 1.3rem;
+  white-space: pre-line;
+}
+
+.frontendContent h2 {
+  font-family: var(--frontend-font);
+  font-size: 1.5rem;
+}
+
+.frontendProjects {
+  height: 100%;
+  width: 20%;
+  margin-top: -7rem;
+}
+
+.frontendProjects img {
+  width: 100%;
+  border-radius: .5rem;
+}
+
+.frontendProjects img:hover {
+  filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
 
 /**BELLS & WHISTLES */
 .parallax {
@@ -83,8 +132,39 @@
     padding: 0.2rem;
   }
 
+  .frontend h1 {
+    font-size: 2rem;
+  }
+
   .presentationAbout h1 {
     font-size: 9rem;
+  }
+
+  .frontend {
+    padding: 3rem .5rem 3rem;
+    background-color: var(--dark-color);
+  }
+
+  .frontendProjects {
+    height: 5rem;
+    width: 100%;
+    position: absolute;
+    bottom: 4rem;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: var(--dark-color);
+    border: 1px solid var(--gray-border-color);
+    border-radius: .5rem;
+    padding: 1rem;
+  }
+
+  .frontendProjects img {
+    height: 4rem;
+    width: 4rem;
   }
 }
 
@@ -96,11 +176,34 @@
   .presentationAbout h1 {
     font-size: 7rem;
   }
+
+  .frontendContent p {
+    overflow-y: scroll;
+    margin-bottom: 12rem;
+  }
 }
 
 @media screen and (max-width: 330px) {
   .presentationAbout h1 {
     font-size: 5.5rem;
+  }
+
+  .frontend h1 {
+    font-size: 1.5rem;
+  }
+
+  .frontendProjects {
+    bottom: 3.5rem;
+  }
+
+  .frontendProjects img {
+    height: 3.7rem;
+    width: 3.7rem;
+  }
+
+  .frontendContent p {
+    overflow-y: scroll;
+    margin-bottom: 8.5rem;
   }
 }
 
@@ -111,9 +214,22 @@
     top: 0px;
   }
   50% {
-    top: 2rem;
+    top: 1.5rem;
   }
   100% {
     top: 0px;
+  }
+}
+
+@keyframes enter-left {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }

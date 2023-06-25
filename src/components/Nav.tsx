@@ -9,11 +9,12 @@ export default function Nav() {
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.scrollY;
-      console.log(currentPosition);
       if (currentPosition >= window.innerHeight - 30) {
         setDisplayText("Frontend");
+        document.getElementById("titles")?.classList.add("hide");
       } else {
         setDisplayText("");
+        document.getElementById("titles")?.classList.remove("hide");
       }
     };
 
@@ -33,7 +34,7 @@ export default function Nav() {
         </div>
       </div>
 
-      {displayText.length > 0 && <div className={styles.popup}>
+      {displayText && <div className={styles.popup}>
         <h1>{displayText}</h1>
       </div>}
     </div>

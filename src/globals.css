@@ -1,13 +1,18 @@
 @font-face {
   font-family: "Osaka";
   src: url("./files/fonts/osaka-re.ttf");
-}
+};
 @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@font-face {
+  font-family: 'Airnt';
+  src: url('./files/fonts/Airnt.otf');
+}
 
 :root {
   --main-font: "Osaka";
   --text-font: "Kanit", sans-serif;
+  --frontend-font: "Airnt";
   --pixel-font: "Silkscreen", cursive;
 
   --accent-color: #d17cff;
@@ -29,4 +34,9 @@
 body,
 html {
   background-color: black;
+}
+
+.hide {
+  filter: blur(10px);
+  opacity: 0;
 }
