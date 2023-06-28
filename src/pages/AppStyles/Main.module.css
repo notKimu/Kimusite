@@ -13,6 +13,7 @@
 /** FIRST SLIDE */
 .minecraftBg {
   background-image: url('../../files/img/background.png');
+  background-attachment: fixed;
 }
 .presentationCharacter {
   height: 100%;
