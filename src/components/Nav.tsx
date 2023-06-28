@@ -28,7 +28,7 @@ export default function Nav() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [displayText]);
 
   return (
     <div className={styles.nav}>
@@ -42,7 +42,7 @@ export default function Nav() {
         </div>
       </div>
 
-      {displayText && <div className={styles.popup}>
+      {displayText && <div key={displayText} className={styles.popup}>
         <h1>{displayText}</h1>
       </div>}
     </div>
