@@ -1,25 +1,16 @@
 import { cloneElement, useEffect, useState } from "react";
 import Nav from "../components/Nav";
-import styles from "./App.module.css";
+import styles from "./AppStyles/index";
 /**IMAGES */
 import projects from "../files/json/projects.json";
+import { frontendDefault, backendDefault, BackendBuilder } from "./AppUtils/projectDefaults";
+import { backendScrollPosition } from "./AppUtils/backendScroll";
 import { FrontendDto } from "../files/json/dto";
 import hatkid from "../files/img/hatkid.png";
 
 function App() {
-  const [frontendProjectContent, setFrontendProjectContent] = useState(
-    <div className={styles.frontendContent}>
-      <h2>Frontend projects</h2>
-      <p>
-        A collection of the frontend projects I made!<br /><br />
-        I usually use react and TypeScript for my projects, 
-        sometimes NextJS but I prefer to do everything on my own, 
-        to know how it works -w-<br /><br />
-        I am learning backend with NestJS so most of my projects are frontend, 
-        check it out for yourself!
-      </p>
-    </div>
-  );
+  const [frontendProjectContent, setFrontendProjectContent] = useState(frontendDefault);
+  const [backendProjectContent, setBackendProjectContent] = useState(backendDefault);
 
   useEffect(() => {
     const parallaxItems = document.querySelectorAll(
@@ -47,6 +38,15 @@ function App() {
     setFrontendProjectContent(cloneElement(content, { key: Date.now() }));
   };
 
+  const handleBackendSelection = (index: number) => {
+    const backendDiv = document.getElementById("backendScroller");
+    if (!backendDiv) return;
+
+    let translation = backendScrollPosition[index];
+
+    backendDiv.style.transform = `translateY(${translation})`;
+  };
+
   return (
     <>
       <Nav />
@@ -62,9 +62,9 @@ function App() {
         </div>
       </div>
 
-      {/**Second div */}
+      {/**Frontend */}
       <div className={`${styles.fullSection} ${styles.frontend}`}>
-        <h1 id="titles">Frontend</h1>
+        <h1 id="navTitles">Frontend</h1>
         <div className={styles.frontendViewer}>
           {frontendProjectContent}
           <div className={styles.frontendProjects}>
@@ -85,6 +85,28 @@ function App() {
             })}
           </div>
         </div>
+      </div>
+
+      {/**Backend */}
+      <div className={`${styles.fullSection} ${styles.backend}`}>
+        <h1 id="navTitles">Backend</h1>
+        <div className={styles.backendSelector}>
+          <div className={styles.backendSelectorOpacity} />
+          <div id="backendScroller" className={styles.backendOptions}>
+            {projects.backend.map((item, index) => {
+              return (
+                <p onClick={() => {
+                  handleBackendSelection(index);
+                  setBackendProjectContent(cloneElement(new BackendBuilder(item.name, item.description).card(), { key: Date.now() }))}}
+                >
+                  {item.name}
+                </p>
+              );
+            })}
+          </div>
+        </div>
+
+        {backendProjectContent}
       </div>
     </>
   );

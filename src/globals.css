@@ -8,14 +8,20 @@
   font-family: 'Airnt';
   src: url('./files/fonts/Airnt.otf');
 }
+@font-face {
+  font-family: 'Bohuan';
+  src: url('./files/fonts/Bohuan.ttf');
+}
 
 :root {
   --main-font: "Osaka";
   --text-font: "Kanit", sans-serif;
   --frontend-font: "Airnt";
+  --backend-font: "Bohuan";
   --pixel-font: "Silkscreen", cursive;
 
   --accent-color: #d17cff;
+  --green-color: #a3ff7c;
   --dark-color: #0a0a0a;
   --gray-border-color: #3b3b3b;
 }

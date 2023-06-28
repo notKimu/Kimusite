@@ -1,0 +1,108 @@
+.fullSection {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 20rem black;
+
+  overflow: hidden;
+}
+
+/** FIRST SLIDE */
+.minecraftBg {
+  background-image: url('../../files/img/background.png');
+}
+.presentationCharacter {
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  right: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  z-index: 3;
+}
+
+.presentationCharacter img {
+  width: 50vw;
+  position: relative;
+  top: 0px;
+  animation: floating 8s ease-in-out infinite;
+}
+
+.presentationAbout {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 1rem;
+}
+
+.presentationAbout h1 {
+  color: azure;
+  font-family: "Osaka";
+  font-size: 11rem;
+}
+
+
+/**BELLS & WHISTLES */
+.parallax {
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0.22, 0.68, 0, 1.71);
+}
+
+/**RESPONSIVE */
+@media screen and (max-width: 800px) {
+  .presentationCharacter {
+    right: 0.5rem;
+  }
+
+  .presentationAbout {
+    left: 0.2rem;
+    padding: 0.2rem;
+  }
+
+  .presentationAbout h1 {
+    font-size: 9rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .presentationCharacter img {
+    margin-top: 20vh;
+  }
+
+  .presentationAbout h1 {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .presentationAbout h1 {
+    font-size: 5.5rem;
+  }
+}
+
+
+/**ANIMATIONS */
+@keyframes floating {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 1.5rem;
+  }
+  100% {
+    top: 0px;
+  }
+}

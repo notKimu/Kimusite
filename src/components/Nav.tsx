@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BsDiscord, BsGithub, BsTwitter } from "react-icons/bs";
 import styles from "./Nav.module.css";
+import { ScrollingNav } from "../utils/ScrollingNav";
 import logo from "../files/img/kimu-logo.png";
 
 export default function Nav() {
@@ -9,12 +10,19 @@ export default function Nav() {
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.scrollY;
-      if (currentPosition >= window.innerHeight - 30) {
-        setDisplayText("Frontend");
-        document.getElementById("titles")?.classList.add("hide");
-      } else {
-        setDisplayText("");
+      const allTitles = document.querySelectorAll('#navTitles');
+
+      allTitles.forEach(t => t.classList.remove('hide'));
+      if (currentPosition >= window.innerHeight - 30 && currentPosition <= (window.innerHeight * 2) - 30) {
+        setDisplayText(ScrollingNav.firstOne.titleContent);
+        allTitles[0].classList.add('hide');
+      } else if (currentPosition >= (window.innerHeight * 2) - 30) {
+        setDisplayText(ScrollingNav.secondOne.titleContent);
         document.getElementById("titles")?.classList.remove("hide");
+        allTitles[1].classList.add('hide');
+      }
+      else {
+        setDisplayText("");
       }
     };
 

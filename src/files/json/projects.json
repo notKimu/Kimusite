@@ -12,8 +12,22 @@
     },
     {
       "name": "Kimuweb",
-      "description": "The website you are in right now!!1!\n\nMy personal portfolio, I am trying to learn by doing crazy stuff here, it's not intended to look professional, I am not a professional, I dont like being professional, I am just dumb :P\n\nIt's build in react as always, I don't like big frameworks, and obviously almost all the code is CSS, that's the funny stuff right there.",
+      "description": "Pene de goma extremadamente enorme.",
       "imageUrl": "https://cdn.discordapp.com/attachments/1112890871109664848/1122327498689093733/kimuweb.png"
+    }
+  ],
+  "backend": [
+    {
+      "name": "NestJS",
+      "description": "NestJS is my favourite backend network, I am trying to understand the dark world of the backend with it and god it makes it easier.\n\nMy latest app with it is an authentication app with JWT, Passport and Prisma with Docker.\nIt lets you register, login, see what you saved and add 'bookmarks' which is just some text and an image.\n\nNothing fancy but it is my first attempt at it -w-"
+    },
+    {
+      "name": "NextJS",
+      "description": "My first contact with backend was with NextJS.\n\nI wanted to make an e-commerce shop template and used it to retrieve the items from PostgreSQL database.\n\nI liked doing it but I hate big frontend frameworks so I stayed with React."
+    },
+    {
+      "name": "Express",
+      "description": "With Express I made an API to save images and audios to the server.\n\nYou uploaded something via the frontend and it made a request to the API which checked if the file should be saved.\n\nIt was my first API, even tho it was 'dirty' it was fun coding it."
     }
   ]
 }
