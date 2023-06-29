@@ -1,6 +1,7 @@
 .frontend {
   padding: 2rem;
   background-color: var(--dark-color);
+  box-shadow: 0 0 20rem black;
 }
 
 .frontend h1 {

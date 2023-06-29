@@ -12,6 +12,10 @@
   font-family: 'Bohuan';
   src: url('./files/fonts/Bohuan.ttf');
 }
+@font-face {
+  font-family: 'Enigma';
+  src: url('./files/fonts/Enigma-Bold.otf');
+}
 
 :root {
   --main-font: "Osaka";
@@ -19,6 +23,7 @@
   --frontend-font: "Airnt";
   --backend-font: "Bohuan";
   --pixel-font: "Silkscreen", cursive;
+  --enigma-font: "Enigma";
 
   --accent-color: #d17cff;
   --green-color: #a3ff7c;

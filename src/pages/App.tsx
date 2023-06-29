@@ -1,16 +1,23 @@
 import { cloneElement, useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import styles from "./AppStyles/index";
-/**IMAGES */
 import projects from "../files/json/projects.json";
-import { frontendDefault, backendDefault, BackendBuilder } from "./AppUtils/projectDefaults";
+import {
+  frontendDefault,
+  backendDefault,
+  BackendBuilder,
+} from "./AppUtils/projectDefaults";
 import { backendScrollPosition } from "./AppUtils/backendScroll";
 import { FrontendDto } from "../files/json/dto";
+/**IMAGES */
 import hatkid from "../files/img/hatkid.png";
+import kimu from "../files/img/kimu.png";
 
 function App() {
-  const [frontendProjectContent, setFrontendProjectContent] = useState(frontendDefault);
-  const [backendProjectContent, setBackendProjectContent] = useState(backendDefault);
+  const [frontendProjectContent, setFrontendProjectContent] =
+    useState(frontendDefault);
+  const [backendProjectContent, setBackendProjectContent] =
+    useState(backendDefault);
 
   useEffect(() => {
     const parallaxItems = document.querySelectorAll(
@@ -95,9 +102,16 @@ function App() {
           <div id="backendScroller" className={styles.backendOptions}>
             {projects.backend.map((item, index) => {
               return (
-                <p onClick={() => {
-                  handleBackendSelection(index);
-                  setBackendProjectContent(cloneElement(new BackendBuilder(item.name, item.description).card(), { key: Date.now() }))}}
+                <p
+                  onClick={() => {
+                    handleBackendSelection(index);
+                    setBackendProjectContent(
+                      cloneElement(
+                        new BackendBuilder(item.name, item.description).card(),
+                        { key: Date.now() }
+                      )
+                    );
+                  }}
                 >
                   {item.name}
                 </p>
@@ -107,6 +121,17 @@ function App() {
         </div>
 
         {backendProjectContent}
+      </div>
+
+      {/**Ending */}
+      <div className={`${styles.fullSection} ${styles.ending}`}>
+        <div className={styles.endingInfo}>
+          <img className={styles.endingCharacter} src={kimu} />
+          <div className={styles.endingInfoText}>
+            <h1>Kimu</h1>
+            <p>Tanks for juanchin</p>
+          </div>
+        </div>
       </div>
     </>
   );

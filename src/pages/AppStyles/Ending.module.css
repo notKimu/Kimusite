@@ -1,0 +1,106 @@
+.ending {
+    display: flex;
+    justify-content: center;
+
+    background-image: url('../../files/img/topography.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.endingInfo {
+    height: 100%;
+    position: relative;
+    display: flex;
+}
+
+.endingInfo img {
+    height: 90%;
+    margin-top: auto;
+}
+
+.endingInfoText {
+    height: fit-content;
+    width: max-content;
+    margin-top: 8rem;
+
+    display: none;
+    flex-direction: column;
+    justify-content:left;
+
+    background-color: var(--dark-color);
+    border: 1px solid var(--gray-border-color);
+    border-radius: .5rem;
+    filter: drop-shadow(10px 10px black);
+    padding: 1rem;
+
+    animation: slideRight .5s;
+}
+
+.endingInfoText * {
+    width: fit-content;
+    margin-left: auto;
+}
+
+.endingInfoText h1 {
+    font-family: var(--enigma-font);
+}
+
+.endingInfo:hover .endingInfoText {
+    display: flex;
+}
+
+
+
+/**RESPONSIVE */
+@media screen and (max-width: 750px) {
+    .endingInfo {
+        height: 90%;
+        margin-top: auto;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .endingInfoText {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        top: 15rem;
+        left: 0;
+        right: 0;
+
+        animation: slideRightMobile .5s;
+    }
+}
+
+
+/**ANIMATIONS */
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        filter: drop-shadow(10px 10px black) blur(10px);
+        margin-left: -10rem;
+    }
+    100% {
+        opacity: 1;
+        filter: drop-shadow(10px 10px black) blur(0);
+        transform: translateX(0);
+        margin-left: 0rem;
+    }
+}
+
+@keyframes slideRightMobile {
+    0% {
+        opacity: 0;
+        filter: drop-shadow(10px 10px black) blur(10px);
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        filter: drop-shadow(10px 10px black) blur(0);
+        transform: translateY(0);
+    }
+}
+
+
+/*<a href="https://www.freepik.com/free-vector/topographic-contour-lines-map-seamless-pattern_13381541.htm#query=topographic%20pattern&position=1&from_view=keyword&track=ais">Image by macrovector</a> on Freepik*/

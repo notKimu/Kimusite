@@ -16,10 +16,12 @@ export default function Nav() {
       if (currentPosition >= window.innerHeight - 30 && currentPosition <= (window.innerHeight * 2) - 30) {
         setDisplayText(ScrollingNav.firstOne.titleContent);
         allTitles[0].classList.add('hide');
-      } else if (currentPosition >= (window.innerHeight * 2) - 30) {
+      } else if (currentPosition >= (window.innerHeight * 2) - 30 && currentPosition <= (window.innerHeight * 3) - 30) {
         setDisplayText(ScrollingNav.secondOne.titleContent);
         document.getElementById("titles")?.classList.remove("hide");
         allTitles[1].classList.add('hide');
+      } else if (currentPosition >= (window.innerHeight * 3) - 30) {
+        setDisplayText(ScrollingNav.thirdOne.titleContent);
       }
       else {
         setDisplayText("");
